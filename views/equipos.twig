@@ -1,0 +1,58 @@
+{#
+{% extends 'layout_usuario.twig' %}
+#}
+
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Equipos
+{% endblock %}
+
+{% set navigation = 'logged_in_encargado'  %}
+
+{% block usuario_nombre %}
+    {{ usuario_nombre }}
+{% endblock %}
+
+{% block content %}
+    <table>
+        <thead>
+            <th>id</th>
+            <th>activo_fijo</th>
+            <th>ubicacion</th>
+            <th>laboratorio_id</th>
+            <th>denomicacion_af</th>
+            <th>denomicacion_cont</rh>
+            <th>numero_serie</th>
+            <th>marca</th>
+            <th>modelo</th>
+            <th>material</th>
+            <th>tipo_activo</th>
+            <th>factura</th>
+            <th></th>
+        </thead>
+    {% for equipo in equipos %}
+        <tr>
+            <td>{{ equipo.id                }}</td>
+            <td>{{ activo_fijo              }}</td>
+            <td>{{ ubicacion                }}</td>
+            <td>{{ equipo.laboratorio_id    }}</td>
+            <td>{{ equipo.denomicacion_af   }}</td>
+            <td>{{ equipo.denomicacion_cont }}</td>
+            <td>{{ equipo.numero_serie      }}</td>
+            <td>{{ equipo.marca             }}</td>
+            <td>{{ equipo.modelo            }}</td>
+            <td>{{ equipo.material          }}</td>
+            <td>{{ equipo.tipo_activo       }}</td>
+            <td>{{ equipo.factura           }}</td>
+            <td><a href="/equipo/mostrar/{{ equipo.id }}">View</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% if currentPage != 1 %}
+        <a href="/equipos/mostrar/{{ currentPage - 1 }}">Previous</a>
+    {% endif %}
+    {% if not lastPage %}
+        <a href="/equipos/mostrar/{{ currentPage + 1 }}">Next</a>
+    {% endif %}
+{% endblock %}

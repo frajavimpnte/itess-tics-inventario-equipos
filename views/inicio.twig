@@ -1,0 +1,14 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Inicio
+{% endblock %}
+
+{% set navigation = 'no_logged_in' %}
+
+{% block content %}
+  {% if inventarioMessage is defined %}
+        <strong>{{ inventarioMessage }}</strong>
+  {% endif %}
+  <h1> Sistems de gestión de inventarios </h1>
+{% endblock %}

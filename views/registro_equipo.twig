@@ -1,0 +1,66 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Registro de Equipos
+{% endblock %}
+
+{% set navigation = 'logged_in_encargado'  %}
+
+{% block usuario_nombre %}
+    {{ usuario_nombre }}
+{% endblock %}
+
+{% block content %}
+    {% if errorMessage is defined %}
+        <strong>{{ errorMessage }}</strong>
+    {% endif %}
+    <form action="/equipo/registro" method="post">
+    
+        <label>Activo fijo:</label>
+        <input type="int" name="activo_fijo">
+        </br>
+
+        <label>Ubicacion:</label>
+        <input type="text" name="ubicacion">
+        </br>
+        
+        <label>Laboratorio:</label>        
+        <input type="text" name="laboratorio_id">
+        </br>
+
+        <label>Denominacion af:</label>
+        <input type="text" name="denominacion_af">
+        </br>
+
+        <label>Denominacion cont:</label>
+        <input type="text" name="denominacion_cont">
+        </br>
+
+        <label>Num. Serie:</label>
+        <input type="text" name="numero_serie">
+        </br>
+
+        <label>Marca:</label>
+        <input type="text" name="marca">
+        </br>
+
+        <label>Modelo:</label>
+        <input type="text" name="modelo">
+        </br>
+
+        <label>Material:</label>
+        <input type="text" name="material">
+        </br>
+
+        <label>Tipo de activo:</label>
+        <input type="text" name="tipo_activo">
+        </br>
+
+        <label>Factura:</label>
+        <input type="text" name="factura">
+        </br>
+
+        <input type="submit">
+        </br>
+    </form>
+{% endblock %}

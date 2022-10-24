@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Registro de Profesores
+{% endblock %}
+
+{% set navigation = 'no_logged_in' %}
+
+{% block content %}
+    {% if errorMessage is defined %}
+        <strong>{{ errorMessage }}</strong>
+    {% endif %}
+    <form action="/registro" method="post">
+        <label>Nombre:</label>
+        <input type="text" name="nombre">
+
+        <label>Apellido:</label>
+        <input type="text" name="apellido">
+        
+        <label>Numero de empledo:</label>
+        <input type="password" name="n_empledo">
+
+        <input type="submit">
+    </form>
+{% endblock %}

@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+	<div style="border: solid 1px">
+	
+	    {% if navigation == 'no_logged_in' %}
+	        <a href="/">Inicio</a>
+        	<a href="/login">Login</a>
+        	<a href="/registro">Register</a>
+        {% endif %}
+	    {% if navigation == 'logged_in_encargado' %}
+	    	<a href="/">Inicio</a>
+	        <a href="/equipos/mostrar">Mostrar equipos</a> 
+        	<a href="/equipo/buscar">Buscar equipo</a> 
+        	<a href="/equipo/registro">Registrar equipo</a>
+        	<a href="/logout">Logout</a>
+	        <hr>
+	        <h3>Sistema de gestion de inventario de laboratorios tics </h3>
+	        <h3>Usuario: {% block usuario_nombre %}{% endblock %}</h3>
+	  
+		{% endif %}
+    </div>
+
+
+
+    {% if block("navegacion") is defined %}
+        {% block navegacion %}{% endblock %}       
+    {% endif %}
+
+    <div style="margin-top: 20px">
+    {% block content %}{% endblock %}
+	</div>
+
+    {% include 'html/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% set navigation = 'no_logged_in' %}
+
+{% block content %}
+    {% if errorMessage is defined %}
+        <strong>{{ errorMessage }}</strong>
+    {% endif %}
+    <form action="/login" method="post">
+        <label>Nombre:</label>
+        <input type="text" name="nombre">
+        <label>Contraseña:</label>
+        <input type="password" name="clave">
+        <input type="submit">
+    </form>
+{% endblock %}

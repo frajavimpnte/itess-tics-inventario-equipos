@@ -1,0 +1,44 @@
+{
+  "": {
+  	"controller":"Inicio",
+  	"method": "inicio"
+  },
+  "login": {
+    "controller": "Usuario",
+    "method": "login"
+  },
+  "registro": {
+    "controller": "Usuario",
+    "method": "registro"
+  },
+  "logout": {
+    "controller": "Usuario",
+    "method": "logout"
+  },
+  "equipos/mostrar":{
+      "controller" : "Equipo",
+      "method": "getAll"
+  },
+  "equipos/mostrar/:page":{
+      "controller" : "Equipo",
+      "method": "getAllWithPage",
+      "params": {
+        "page": "number"
+      }
+  },
+  "equipo/mostrar/:id":{
+      "controller" : "Equipo",
+      "method": "get", 
+      "params": {
+         "id": "number"
+      } 
+  },
+  "equipo/registro": {
+    "controller": "Equipo",
+    "method": "registro"
+  },
+  "profesor/registro": {
+    "controller": "Usuario",
+    "method": "registro"
+  }
+}

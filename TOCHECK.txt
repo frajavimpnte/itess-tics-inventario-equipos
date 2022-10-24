@@ -1,0 +1,28 @@
+CAMBIOS -----------------------------------------------------
+Funcionalidad:
+	Login de usuario
+	Logout de usuario
+	Registro de usuario
+	Registro de equipos
+	Vista paginada de equipos
+
+
+Base de datos tiene 
+	EQUIPO
+	PRESTAMOS
+	PROFESORES
+	USUARIOS
+
+ANALYZE------------------------------------------------------
+
+
+SECURITY PROBLEM--------------------------------------------
+No se regera el session id, cuando se loggea un usuario.
+Mantiene la session con la que se abre la pagina.
+
+
+cookie value with sessions, not logged in
+d01doop9vvglpehkr6h4qr7lik
+
+cookie value when logged in
+d01doop9vvglpehkr6h4qr7lik

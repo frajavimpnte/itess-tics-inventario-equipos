@@ -1,0 +1,37 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Equipo-{{ equipo.id }}
+{% endblock %}
+
+{% set navigation = 'logged_in_encargado'  %}
+
+{% block usuario_nombre %}
+    {{ usuario_nombre }}
+{% endblock %}
+
+{% block content %}
+    <h2>Equipo-{{ equipo.id }} descripsion</h2>
+    <hr>
+
+    <p><strong>id:               </strong> {{ equipo.id               }}</p>
+    <p><strong>Activo fijo:      </strong> {{ equipo.activo_fijo      }}</p>
+    <p><strong>Ubicación:        </strong> {{ equipo.ubicacion        }}</p>
+    <p><strong>Laboratorio:      </strong> {{ equipo.laboratorio      }}</p>
+    <p><strong>Denominacion_af:  </strong> {{ equipo.denominacion_af  }}</p>
+    <p><strong>Denominacion_cont:</strong> {{ equipo.denominacion_cont}}</p>
+    <p><strong>Número de serie:  </strong> {{ equipo.numero_serie     }}</p>
+    <p><strong>Marca:            </strong> {{ equipo.marca            }}</p>
+    <p><strong>Modelo:           </strong> {{ equipo.modelo           }}</p>
+    <p><strong>Material:         </strong> {{ equipo.material         }}</p>
+    <p><strong>Tipo_activo:      </strong> {{ equipo.tipo_activo      }}</p>
+    <p><strong>Factura:          </strong> {{ equipo.factura          }}</p>
+    <hr>
+
+    <h3>Actions</h3>
+
+    <form method="post" action="/equipo/{{ equipo.id }}/borrow">
+        <input type="submit" value="Borrow">
+    </form>
+
+{% endblock %}

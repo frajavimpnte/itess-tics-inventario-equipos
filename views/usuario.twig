@@ -1,0 +1,18 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Usuario {{ usuario_nombre }}
+{% endblock %}
+
+{% set navigation = 'logged_in_encargado'  %}
+
+{% block usuario_nombre %}
+	{{ usuario_nombre }}
+{% endblock %}
+
+{% block content %}
+  {% if errorMessage is defined %}
+        <strong>{{ errorMessage }}</strong>
+  {% endif %}
+  <h1> LOGGED.... </h1>
+{% endblock %}
